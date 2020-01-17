@@ -26,9 +26,20 @@
         - ```<alias name="testDataSource" alias="dataSource"/>```
         - Bean aliasing allows us to override already configured beans and to substitute them with a different object definition.
    - ### Bean instantiation:
-     - Bean instantiation with default Constructor: ```<bean id="exampleBean" class="examples.ExampleBean"/>```
-     - Instantiation with a Static Factory Method: ```<bean id="clientService" class="examples.ClientService" factory-method="createInstance"/>```
-     - Instantiation by Using an Instance Factory Method: ```<bean id="clientService" factory-bean="serviceLocator"  factory-method="createClientServiceInstance"/>```
+     - *Bean instantiation with default Constructor*: ```<bean id="exampleBean" class="examples.ExampleBean"/>```
+     - *Instantiation with a Static Factory Method*: ```<bean id="clientService" class="examples.ClientService" factory-method="createInstance"/>```
+     - *Instantiation by Using an Instance Factory Method*: ```<bean id="clientService" factory-bean="serviceLocator"  factory-method="createClientServiceInstance"/>```
+    - ### Dependency injection:
+      - *Constructor based dependency injection*: 
+       ``` 
+        <bean id="beanOne" class="x.y.ThingOne">
+             <constructor-arg ref="beanThree"/> // Passing reference 
+             <constructor-arg type="int" value="7500000"/> // passing value 
+             <constructor-arg type="java.lang.String" value="42"/>
+             <constructor-arg index="0" value="7500000"/> // index based
+         </bean>
+        ```
+        
       
      
      
