@@ -28,7 +28,8 @@
    - ### Bean instantiation:
      - Bean instantiation with default Constructor: ```<bean id="exampleBean" class="examples.ExampleBean"/>```
      - Instantiation with a Static Factory Method: ```<bean id="clientService" class="examples.ClientService" factory-method="createInstance"/>```
-     - 
+     - Instantiation by Using an Instance Factory Method: ```<bean id="clientService" factory-bean="serviceLocator"  factory-method="createClientServiceInstance"/>```
+      
      
      
     
