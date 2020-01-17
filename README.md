@@ -44,8 +44,7 @@
          ```
          <bean id="exampleBean" class="examples.ExampleBean">
               <!-- setter injection using the nested ref element -->
-              <property name="beanOne">
-                  <ref bean="anotherExampleBean"/>
+              <property name="beanOne" ref="anotherExampleBean"/>
               </property>
           ```
       
