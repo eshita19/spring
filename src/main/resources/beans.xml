@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="esh1" class="com.beans.Student">
+		<property name="name" value="esh1"></property>
+		<property name="rollNum" value="1"></property>
+	</bean>
+	<bean id="esh2" class="com.beans.Student">
+		<property name="name" value="esh2"></property>
+		<property name="rollNum" value="2"></property>
+	</bean>
+	<alias name="esh2" alias="esh1"></alias>
+</beans>        
