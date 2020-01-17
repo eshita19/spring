@@ -8,6 +8,16 @@
     - The configuration metadata is represented in XML, Java annotations, or Java code.
     - The **ApplicationContext** is the interface for an advanced factory capable of maintaining a registry of different beans and their dependencies.
     - Instantiating container:``` ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");```
+    - ```
+      <beans>
+        <import resource="services.xml"/>
+        <import resource="resources/messageSource.xml"/>
+        <import resource="/resources/themeSource.xml"/>
+
+        <bean id="bean1" class="..."/>
+        <bean id="bean2" class="..."/>
+    </beans>
+      ```
     
     - ### XML bean definition:
       - id: id is unique identifier of bean.
