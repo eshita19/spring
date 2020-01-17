@@ -16,7 +16,7 @@
 
         <bean id="bean1" class="..."/>
         <bean id="bean2" class="..."/>
-    </beans>
+      </beans>
      ```
     
     - ### XML bean definition:
