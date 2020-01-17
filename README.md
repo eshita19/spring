@@ -37,6 +37,7 @@
              <constructor-arg type="int" value="7500000"/> // passing value 
              <constructor-arg type="java.lang.String" value="42"/>
              <constructor-arg index="0" value="7500000"/> // index based
+             <constructor-arg name="years" value="7500000"/> // passing by name/value
          </bean>
         ```
         
