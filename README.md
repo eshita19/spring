@@ -26,7 +26,9 @@
         - ```<alias name="testDataSource" alias="dataSource"/>```
         - Bean aliasing allows us to override already configured beans and to substitute them with a different object definition.
    - ### Bean instantiation:
-     - Bean instantiation with Constructor:
+     - Bean instantiation with default Constructor: ```<bean id="exampleBean" class="examples.ExampleBean"/>```
+     - Instantiation with a Static Factory Method: ```<bean id="clientService" class="examples.ClientService" factory-method="createInstance"/>```
+     - 
      
      
     
