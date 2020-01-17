@@ -15,6 +15,8 @@
       - alias: Override bean with "name" with an existing bean with "name" alias.
         - ```<alias name="testDataSource" alias="dataSource"/>```
         - Bean aliasing allows us to override already configured beans and to substitute them with a different object definition.
+   - ### Bean instantiation:
+     
      
     
     
