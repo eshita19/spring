@@ -1,15 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Constructor based instantiation -->
 	<bean id="esh1" class="com.beans.Student">
 		<property name="name" value="esh1"></property>
 		<property name="rollNum" value="1"></property>
 	</bean>
-	<bean id="esh2" class="com.beans.Student">
-		<property name="name" value="esh2"></property>
-		<property name="rollNum" value="2"></property>
-	</bean>
+
+	<!-- Static factory method instantiation -->
+	<bean id="esh2" class="com.beans.Student" factory-method="getStudent"></bean>
 	<alias name="esh2" alias="esh1"></alias>
+
+	<!--  Factory class instantiation -->
+	<bean id="beanFactory" class="com.beans.BeanFactory"></bean>
+	<bean id="esh3" class="com.beans.Student" factory-bean="beanFactory"
+		factory-method="getStudent">
+	</bean>
+	
+	<!--  Constructor injection -->
+	<bean id="esh4" class="com.beans.Student">
+		<constructor-arg name="name" value="esh4"></constructor-arg>
+		<constructor-arg name="rollNum" value="4"></constructor-arg>
+	</bean>
+	
+	<!--  Setter injection  -->
+	<bean id="esh5" class="com.beans.Student">
+		<property name="name" value="esh4"></property>
+		<property name="rollNum" value="4"></property>
+		<property name="marks">
+			<props>
+				<prop key="hindi">90</prop>
+				<prop key="english">80</prop>
+			</props>
+		</property>
+		<property name="hobbies">
+			<list>
+				<value>singing</value>
+				<value>dancing</value>
+			</list>
+		</property>
+		<property name="teachers">
+			<set>
+				<value>Asha</value>
+			</set>
+		</property>
+		<property name="teacherBySubject">
+			<map>
+				<entry key="maths" value="asha"></entry>
+			</map>
+		</property>
+	</bean>
 </beans>        
