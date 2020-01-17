@@ -7,7 +7,7 @@
     - The org.springframework.context.ApplicationContext interface represents the Spring IoC container and is responsible for instantiating, configuring, and assembling the beans.
     - The configuration metadata is represented in XML, Java annotations, or Java code.
     - The **ApplicationContext** is the interface for an advanced factory capable of maintaining a registry of different beans and their dependencies.
-    - Ex:``` ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");```
+    - Instantiating container:``` ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");```
     
     - ### XML bean definition:
       - id: id is unique identifier of bean.
@@ -16,6 +16,7 @@
         - ```<alias name="testDataSource" alias="dataSource"/>```
         - Bean aliasing allows us to override already configured beans and to substitute them with a different object definition.
    - ### Bean instantiation:
+     - Bean instantiation with Constructor:
      
      
     
