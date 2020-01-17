@@ -17,7 +17,7 @@
         <bean id="bean1" class="..."/>
         <bean id="bean2" class="..."/>
     </beans>
-      ```
+     ```
     
     - ### XML bean definition:
       - id: id is unique identifier of bean.
