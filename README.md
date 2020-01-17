@@ -6,5 +6,10 @@
     - The dependecies of a class are not instantiated by class, but passed to the class either through constructor, setter or factory method bean injection.
     - The org.springframework.context.ApplicationContext interface represents the Spring IoC container and is responsible for instantiating, configuring, and assembling the beans.
     - The configuration metadata is represented in XML, Java annotations, or Java code.
+    - The **ApplicationContext** is the interface for an advanced factory capable of maintaining a registry of different beans and their dependencies.
+    - Ex:
+     ```
+      ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+     ```
     
 
