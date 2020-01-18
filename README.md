@@ -109,6 +109,22 @@
      - @Autowired - For auto wiring a dependency.(Matches by type, Restricts by qualifiers, matches by name)
      - @Autowired @Qualifier("main") - Narrow down bean injection dependency. We can create custom qualifier annotation as well.
      - @Resource - Get resource by name. The name is extracted from the name of the annotated setter or field, or it is taken from the name-Parameter. (Matches by name, matches by type, Restricts by qualifiers)
+     - @value - Used to inject externalized properties. Ex: ```@Value("${catalog.name}")```
+     
+   - ### Classpath scanning and other annotations:
+      - For compnent scanning: ```<Context:component-scan bas-package="com.esh">```.
+      - @Component, @Service, @Repository, @Controller.
+      - Include and Exclude filter in component scanning: 
+        ```
+        <Context:component-scan bas-package="com.esh"> 
+            <context:include-filter type="regex"
+                    expression=".*Stub.*Repository"/>
+            <context:exclude-filter type="annotation"
+                    expression="org.springframework.stereotype.Repository"/>
+         </context:component-scan>
+        ```
+     
+     
      
      
       
