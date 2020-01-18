@@ -110,9 +110,17 @@
      - @Autowired @Qualifier("main") - Narrow down bean injection dependency. We can create custom qualifier annotation as well.
      - @Resource - Get resource by name. The name is extracted from the name of the annotated setter or field, or it is taken from the name-Parameter. (Matches by name, matches by type, Restricts by qualifiers)
      - @value - Used to inject externalized properties. Ex: ```@Value("${catalog.name}")```
+     - @Bean - is applied on a method to specify that it returns a bean to be managed by Spring context.
      
    - ### Classpath scanning and other annotations:
-      - For compnent scanning: ```<Context:component-scan bas-package="com.esh">```.
+      - For component scanning: 
+        ```<Context:component-scan bas-package="com.esh">
+           @Configuration
+           @ComponentScan(basePackages = "org.example", scopedProxy = ScopedProxyMode.INTERFACES)
+           public class AppConfig {
+              // ...
+           }
+         ```
       - @Component, @Service, @Repository, @Controller.
       - Include and Exclude filter in component scanning: 
         ```
@@ -123,6 +131,7 @@
                     expression="org.springframework.stereotype.Repository"/>
          </context:component-scan>
         ```
+        
      
      
      
