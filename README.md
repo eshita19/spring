@@ -55,9 +55,14 @@
    - ### Method injection:
      - **Lookup method injection**:
        - *Issue* - Bean A - Singleton, Bean B - Prototype, Bean B injected to Bean A. Hence Bean A will always hold one instance of Bean B.
-       - *Solution 1* -  Injection expllicity using applicationContext.getBean()
+       - *Solution 1* -  Injection expllicity using ```applicationContext.getBean()```
        - *Solution 2* - Use Method injection
-         - 
+         ``` 
+          <bean id="pizzaShop" class="com.javarticles.spring.PizzaShop"> //Singleton
+             <lookup-method name="makePizza" bean="pizza"/> // Singleton abstract method makePizza will generate pizza
+             <lookup-method name="makeVeggiePizza" bean="veggiePizza"/>
+          </bean>
+         ```
      
      
       
