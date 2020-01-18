@@ -13,6 +13,10 @@ public class Student {
 	Set<String> teachers;
 	Map<String,String> teacherBySubject;
 	
+	 public void init() {
+		 System.out.println("Inside init method");
+	 }
+	
 	
 	public Student(String name, String rollNum){
 		this.name = name;
@@ -20,6 +24,7 @@ public class Student {
 	}
 
 	public Student() {
+		System.out.println("Inside constructor");
 	}
 
 	public String getName() {

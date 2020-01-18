@@ -3,6 +3,7 @@ package com.main;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.beans.Student;
+import com.beans.Teacher;
 
 public class Main {
 	public static void main(String[] args) {
@@ -16,5 +17,11 @@ public class Main {
 			System.out.println("List Hobbies: " + student.getHobbies());
 			System.out.println("Student- Marks: " + student.getTeacherBySubject());
 		}
+		
+		Teacher teacher  = context.getBean("teacher", Teacher.class);
+		System.out.println("Stud1: " +   teacher.getStudent().hashCode());
+		System.out.println("Stud2: " + teacher.getStudent().hashCode());
+		System.out.println(context.getBean("esh1", Student.class).hashCode());
+		System.out.println(context.getBean("esh1", Student.class).hashCode());
 	}
 }

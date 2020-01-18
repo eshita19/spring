@@ -2,10 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd"
+        default-init-method="init">
 
 	<!-- Constructor based instantiation -->
-	<bean id="esh1" class="com.beans.Student">
+	<bean id="esh1" class="com.beans.Student" scope="prototype">
 		<property name="name" value="esh1"></property>
 		<property name="rollNum" value="1"></property>
 	</bean>
@@ -52,5 +53,34 @@
 				<entry key="maths" value="asha"></entry>
 			</map>
 		</property>
+		
+		<!-- 
+			- <bean id="parent" abstract = "true" ... ></bean> // Abstract class
+			- <bean parent="parent" ></bean> //Inherit from class
+			
+	       - <bean >
+				<property name="ssdf">  //Inner class
+					<bean class=""" >
+						<property...></property>
+					</bean>	
+				</property>
+				
+			</bean>
+			
+			- <bean class="ExampleBean">
+				<property value=""></property>
+			  </bean>
+			  
+			 - <bean class="ExampleBean">
+			 		<property>
+			 			<null/>
+			 		</property>
+			   </bean> 
+			   
+			  - <bean lazy-init="true"></bean> //By default singleton beans are eagerly initialized
+		 -->
+	</bean>
+	<bean id="teacher" class="com.beans.Teacher">
+		<lookup-method name="getStudent" bean="esh1" />
 	</bean>
 </beans>        
