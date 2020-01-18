@@ -46,6 +46,54 @@
               <property name="beanOne" ref="anotherExampleBean"/></property>
          </bean>     
           ```
+   - ### Autowiring:
+     - *byName*: Spring looks for a bean with the same name as the property that needs to be autowired.
+     - *byType*: Lets a property be autowired if exactly one bean of the property type exists in the container.
+     - *by constructor*: Analogous to byType but applies to constructor arguments. 
+     - Exclude bean from autowiring - ```<bean autowire-candidate="false"></bean>```
+     
+   - ### Method injection:
+     - **Lookup method injection**:
+       - *Issue* - Bean A - Singleton, Bean B - Prototype, Bean B injected to Bean A. Hence Bean A will always hold one instance of Bean B.
+       - *Solution 1* -  Injection expllicity using ```applicationContext.getBean()```
+       - *Solution 2* - Use Method injection
+         ``` 
+          <bean id="pizzaShop" class="com.javarticles.spring.PizzaShop"> //Singleton
+             <lookup-method name="makePizza" bean="pizza"/> // Singleton abstract method makePizza will generate pizza
+             <lookup-method name="makeVeggiePizza" bean="veggiePizza"/>
+          </bean>
+         ```
+   - ### Bean scopes
+     1. **Singleton** : Only one bean available always when we do context.getBean().
+     2. **Prototype**: Each time new instance available when we do context.getBean().
+     3. **Request**: One bean per Web request.
+     4. **Application**: One bean for entire web application.
+     5. **Session**: One bean per session.
+  
+  - ### Customizing nature of bean:
+     1. **Initialization callbacks**: 
+         - **Bean implement ```InitializingBean`` and implement ```afterPropertiesSet```** : Called once bean's DI is complete. Not recommended as it binds code to Spring as you need to implement spring interface.
+         - **Init method** : In the case of XML-based configuration metadata, you can use the init-method attribute to specify the name of the method that has a void no-argument signature. With Java configuration, you can use the initMethod attribute of @Bean. We can specify default init method for all beans using ```default-init-method```.
+         - **Annotation @PostConstruct**-  Using these annotations means that your beans are not coupled to Spring-specific interfaces
+         - Order of invocation - 1. @PostConstruct, 2. InitailizingBean's afterPropertiesSet, 3. Any init-method
+      
+      2. **Destruction callbacks**: 
+            - **Bean implement ```DisposableBean`` and implement ```destroy```** : Not recommended as it binds code to Spring as you need to implement spring interface.
+         - **Destroy method** : In the case of XML-based configuration metadata, you can use the destroy-method attribute to specify the name of the method that has a void no-argument signature. With Java configuration, you can use the destroyMethod attribute of @Bean.We can specify default destroy method for all beans using ```default-destroy-method```.
+         - **Annotation @PreDestroy**-  Using these annotations means that your beans are not coupled to Spring-specific interfaces
+          - Order of invocation - 1. @PreDestroy, 2. DisposableBean's destroy, 3. Any destroy-method
+          
+          
+   - ### Injection Spring and Servlet beans
+      - ApplictionContext - Autowire ApplicationContext or implement ApplicationContextAware.
+      - Bean name in bean definition - Implement BeanNameAware.
+      - MessageSource - Autowire or implement MessageSourceAware.
+      - ServletConfig - Autowire or Implement ServletConfigAware.
+      - ServletContext - Autowire or implement ServletContextAware.
+      
+    
+     
+     
       
      
      
