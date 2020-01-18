@@ -50,6 +50,7 @@
      - *byName*: Spring looks for a bean with the same name as the property that needs to be autowired.
      - *byType*: Lets a property be autowired if exactly one bean of the property type exists in the container.
      - *by constructor*: Analogous to byType but applies to constructor arguments. 
+     - Exclude bean from autowiring - ```<bean autowire-candidate="false"></bean>```
      
      
       
