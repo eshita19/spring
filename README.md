@@ -52,6 +52,13 @@
      - *by constructor*: Analogous to byType but applies to constructor arguments. 
      - Exclude bean from autowiring - ```<bean autowire-candidate="false"></bean>```
      
+   - ### Method injection:
+     - **Lookup method injection**:
+       - *Issue* - Bean A - Singleton, Bean B - Prototype, Bean B injected to Bean A. Hence Bean A will always hold one instance of Bean B.
+       - *Solution 1* -  Injection expllicity using applicationContext.getBean()
+       - *Solution 2* - Use Method injection
+         - 
+     
      
       
      
