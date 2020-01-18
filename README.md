@@ -71,6 +71,10 @@
      5. **Session**: One bean per session.
   
   - ### Customizing nature of bean:
+     1. **Initialization callbacks**: 
+         - **Bean implement ```InitializingBean`` and implement ```afterPropertiesSet```** : Called once bean's DI is complete. Not recommended as it binds code to Spring as you need to implement spring interface.
+         - **Init method** : In the case of XML-based configuration metadata, you can use the init-method attribute to specify the name of the method that has a void no-argument signature. With Java configuration, you can use the initMethod attribute of @Bean.
+         - **Annotation @PostConstruct**-  Using these annotations means that your beans are not coupled to Spring-specific interfaces
     
      
      
