@@ -82,6 +82,15 @@
          - **Destroy method** : In the case of XML-based configuration metadata, you can use the destroy-method attribute to specify the name of the method that has a void no-argument signature. With Java configuration, you can use the destroyMethod attribute of @Bean.We can specify default destroy method for all beans using ```default-destroy-method```.
          - **Annotation @PreDestroy**-  Using these annotations means that your beans are not coupled to Spring-specific interfaces
           - Order of invocation - 1. @PreDestroy, 2. DisposableBean's destroy, 3. Any destroy-method
+          
+          
+    - ### Injection Spring and Servlet beans
+      - ApplictionContext - Autowire ApplicationContext or implement ApplicationContextAware.
+      - Bean name in bean definition - Implement BeanNameAware.
+      - MessageSource - Autowire or implement MessageSourceAware.
+      - ServletConfig - Autowire or Implement ServletConfigAware.
+      - ServletContext - Autowire or implement ServletContextAware.
+      
     
      
      
