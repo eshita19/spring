@@ -103,10 +103,12 @@
     -  FactoryBean can be used to encapsulate complex initialization logic of a bean.
     -  For a given FactoryBean with an id of myBean, invoking ```getBean("myBean")``` on the container returns the product of the FactoryBean, whereas invoking ```getBean("&myBean")``` returns the FactoryBean instance itself.
     
-      
-     
-      
-    
+   - ### Annotation based configuration:
+     - For annotation setup : ```<context:annotation-config/>```
+     - @Requrired/ @Autowired(required = true) - This annotation indicates that the affected bean property must be populated at configuration time, through an explicit property value in a bean definition or through autowiring.
+     - @Autowired - For auto wiring a dependency.
+     - @Autowired @Qualifier("main") - Narrow down bean injection dependency. We can create custom qualifier annotation as well.
+     - @Resource - Get resource by name. The name is extracted from the name of the annotated setter or field, or it is taken from the name-Parameter.
      
      
       
