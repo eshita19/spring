@@ -91,6 +91,17 @@
       - ServletConfig - Autowire or Implement ServletConfigAware.
       - ServletContext - Autowire or implement ServletContextAware.
       
+   - ### Bean factory Post processor 
+     - It modifies a bean's configuration metadata, before it is instantiated.
+     - Ex1: PropertySourcesPlaceholder - It can be used to declared property pairs, which can be used as bean's property's value or bean's class name.
+     ```<bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+          <property name="locations" value="classpath:com/something/jdbc.properties"/></bean>
+          or
+        <context:property-placeholder location="classpath:com/something/jdbc.properties"/>   
+     ```
+      
+     
+      
     
      
      
