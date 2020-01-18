@@ -75,6 +75,11 @@
          - **Bean implement ```InitializingBean`` and implement ```afterPropertiesSet```** : Called once bean's DI is complete. Not recommended as it binds code to Spring as you need to implement spring interface.
          - **Init method** : In the case of XML-based configuration metadata, you can use the init-method attribute to specify the name of the method that has a void no-argument signature. With Java configuration, you can use the initMethod attribute of @Bean.
          - **Annotation @PostConstruct**-  Using these annotations means that your beans are not coupled to Spring-specific interfaces
+      
+      2. **Destruction callbacks**: 
+            - **Bean implement ```DisposableBean`` and implement ```destroy```** : Not recommended as it binds code to Spring as you need to implement spring interface.
+         - **Destroy method** : In the case of XML-based configuration metadata, you can use the destroy-method attribute to specify the name of the method that has a void no-argument signature. With Java configuration, you can use the destroyMethod attribute of @Bean.
+         - **Annotation @PreDestroy**-  Using these annotations means that your beans are not coupled to Spring-specific interfaces
     
      
      
