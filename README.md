@@ -99,6 +99,10 @@
           or
         <context:property-placeholder location="classpath:com/something/jdbc.properties"/>   
      ```
+   - ### Customizing instantiation logic using facory bean:
+    - FactoryBean can be used to encapsulate complex initialization logic of a bean.
+    - For a given FactoryBean with an id of myBean, invoking ```getBean("myBean")``` on the container returns the product of the FactoryBean, whereas invoking ```getBean("&myBean")``` returns the FactoryBean instance itself.
+    
       
      
       
