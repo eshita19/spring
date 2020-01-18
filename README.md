@@ -63,6 +63,12 @@
              <lookup-method name="makeVeggiePizza" bean="veggiePizza"/>
           </bean>
          ```
+   - ### Bean scopes
+     1. **Singleton** : Only one bean available always when we do context.getBean().
+     2. **Prototype**: Each time new instance available when we do context.getBean().
+     3. **Request**: One bean per Web request.
+     4. **Application**: One bean for one servlet context i.e, for one application.
+     5. **Session**: One bean per session.
      
      
       
