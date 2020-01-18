@@ -69,6 +69,9 @@
      3. **Request**: One bean per Web request.
      4. **Application**: One bean for entire web application.
      5. **Session**: One bean per session.
+  
+  - ### Customizing nature of bean:
+    
      
      
       
