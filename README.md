@@ -46,6 +46,12 @@
               <property name="beanOne" ref="anotherExampleBean"/></property>
          </bean>     
           ```
+   - ### Autowiring:
+     - autowire byName: Spring looks for a bean with the same name as the property that needs to be autowired.
+     - autowire byType: Lets a property be autowired if exactly one bean of the property type exists in the container.
+     - autowire by constructor arg: Analogous to byType but applies to constructor arguments. 
+     
+     
       
      
      
