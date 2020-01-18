@@ -84,7 +84,7 @@
           - Order of invocation - 1. @PreDestroy, 2. DisposableBean's destroy, 3. Any destroy-method
           
           
-    - ### Injection Spring and Servlet beans
+   - ### Injection Spring and Servlet beans
       - ApplictionContext - Autowire ApplicationContext or implement ApplicationContextAware.
       - Bean name in bean definition - Implement BeanNameAware.
       - MessageSource - Autowire or implement MessageSourceAware.
